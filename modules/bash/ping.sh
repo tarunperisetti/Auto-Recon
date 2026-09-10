@@ -1,11 +1,11 @@
 #!/bin/bash
-IP=$1
+target=$1
 echo
 echo "=========================================="
 echo "[+] PING SCAN"
 echo "=========================================="
 
-ping -c 4 -W 2 "$IP" &>/dev/null
+ping -c 4 -W 2 "$target" &>/dev/null
 
 if [[ $? -eq 0 ]]; then
     echo "[+] Host is UP"
