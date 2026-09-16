@@ -12,9 +12,6 @@ def banner():
     print(Fore.RED+"               Basic automatic passive and active reconnassince")
     print(Fore.RED+"="*79)
 
-def resolve(target):
-    return socket.gethostbyname(target)
-
 #-----------------main-----------------
 
 banner()
@@ -22,8 +19,11 @@ target = input("\n[+] Enter IP address or Domain name : ")
 target_type = classify_target(target)
 
 if target_type == "DOMAIN":
-    ip = resolve(target)
-    print(f"[+] Target ip : {ip}")
+    ip = socket.gethostbyname(target)
+    print(f"[+] Target IP : {ip}\n")
+if target_type == "IP":
+    domain = socket.gethostbyaddr(target)
+    print(f"[+] Target Domain : {domain}\n")
 
 if target_type == "IP":
     ip_recon(target)
