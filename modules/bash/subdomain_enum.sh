@@ -6,6 +6,6 @@ if [ -z "$target" ];then
     exit 1
 fi
 
-echo "[#] Target : $target"
+echo "[✱] Target : $target"
 echo
-nmap -T4 "$target"
+subfinder -d "$target" -silent

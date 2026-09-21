@@ -8,4 +8,5 @@ fi
 
 echo "[✱] Target : $target"
 echo
-nmap -sV -T4 "$target"
+echo "------------------HTTP------------------"
+whatweb -a 1 "http://$target"

@@ -7,12 +7,12 @@ if [ -z "$target" ]; then
 fi
 
 if [[ "$target" =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-    echo "[+] Target : $target"
+    echo "[✱] Target : $target"
     echo
     echo "-----------------PTR / REVERSE DNS-----------------"
     dig -x "$target" +short
 else
-    echo "[+] Target : $target"
+    echo "[✱] Target : $target"
     echo
     echo "----------------NS RECORDS-----------------"
     dig "$target" NS +short
