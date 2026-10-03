@@ -22,15 +22,8 @@ target_type = classify_target(target)
 if target_type == "DOMAIN":
     ip = socket.gethostbyname(target)
     print(f"[+] Target IP : {ip}\n")
-if target_type == "IP":
+elif target_type == "IP":
     domain = socket.gethostbyaddr(target)
     print(f"[+] Target Domain : {domain}\n")
-
-if target_type == "IP":
-    results = ip_recon(target)
-    create_report(target,results)
-elif target_type == "DOMAIN":
-    results = domain_recon(target)
-    create_report(target,results)
 else:
     print("[✘] Invalid Target")
