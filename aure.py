@@ -1,8 +1,6 @@
 from core.valid import classify_target
-from recon.ip_recon import ip_recon
 from recon.domain_recon import domain_recon
 import socket
-from core.report import create_report
 import pyfiglet 
 from colorama import Fore,init
 
@@ -16,6 +14,7 @@ def banner():
 #-----------------main-----------------
 
 banner()
+
 target = input("\n[✱] Enter IP address or Domain name : ")
 target_type = classify_target(target)
 
@@ -27,3 +26,40 @@ elif target_type == "IP":
     print(f"[+] Target Domain : {domain}\n")
 else:
     print("[✘] Invalid Target")
+    exit()
+
+print("""
+╔══════════════════════════════════════════════╗
+║                 AUTO RECON                   ║
+╠══════════════════════════════════════════════╣
+║                                              ║
+║                PASSIVE RECON                 ║
+║                                              ║
+║  [1]  WHOIS Information                      ║
+║  [2]  Search Engine Recon                    ║
+║  [3]  Google Dorking                         ║
+║  [4]  Email Enumeration                      ║
+║  [5]  IP Information                         ║
+║                                              ║
+║                ACTIVE RECON                  ║
+║                                              ║
+║  [6]  DNS Enumeration                        ║
+║  [7]  Subdomain Enumeration                  ║
+║  [8]  Port Scanning                          ║
+║  [9]  Service Enumeration                    ║
+║  [10] HTTP Header Analysis                   ║
+║  [11] Web Technology Detection               ║
+║  [12] Robots & Sitemap Check                 ║
+║  [13] SSL/TLS Information                    ║
+║  [14] Directory Enumeration                  ║
+║                                              ║
+║                 OPERATIONS                   ║
+║                                              ║
+║  [15] Generate Report                        ║
+║  [0]  Exit                                   ║
+║                                              ║
+╚══════════════════════════════════════════════╝
+""")
+
+choice = input("[?] Select recon : ")
+domain_recon(choice,target)
