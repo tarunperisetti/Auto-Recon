@@ -1,5 +1,5 @@
 from core.valid import classify_target
-from recon.domain_recon import domain_recon
+from recon.auto_recon import auto_recon
 import socket
 import pyfiglet 
 from colorama import Fore,init
@@ -62,4 +62,4 @@ print("""
 """)
 
 choice = input("[?] Select recon : ")
-domain_recon(choice,target)
+auto_recon(choice,target)

@@ -8,7 +8,7 @@ def sidebanner(n):
     print(Fore.CYAN+"="*82)
 
 #------------------------------active-recon-------------------------------------------------------
-def ip_recon(choice,target):
+def auto_recon(choice,target):
 
     match choice:
 
