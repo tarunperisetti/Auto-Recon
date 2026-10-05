@@ -8,4 +8,4 @@ fi
 
 echo "[✱] Target : $target"
 echo
-nmap -O -T4 "$target"
+nmap -p- -T4 "$target"
