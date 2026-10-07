@@ -17,7 +17,7 @@ def auto_recon(choice,target):
             sidebanner("[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>WHOIS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<]")
             run_bash("modules/bash/whois.sh",target) 
         case "2":
-            sidebanner("[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>WHOIS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<]") 
+            sidebanner("[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<]") 
         case "3":  
             sidebanner("[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>GOOGLE-DORKING<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<]")
             run_bash("modules/bash/google_dorking.sh",target)
@@ -50,7 +50,7 @@ def auto_recon(choice,target):
             run_bash("modules/bash/traceroute.sh",target) 
 
             
-
-            sidebanner("[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>PING<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<]")
-            run_bash("modules/bash/ping.sh",target) 
+        case "14":
+            sidebanner("[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Directory Enumeration<<<<<<<<<<<<<<<<<<<<<<<<<<<<<]")
+            run_bash("modules/bash/dir_enum.sh",target) 
     
