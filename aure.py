@@ -49,7 +49,7 @@ print("""
 ║  [9]  Service Enumeration                    ║
 ║  [10] HTTP Header Analysis                   ║
 ║  [11] Web Technology Detection               ║
-║  [12] HTTP_Method                            ║
+║  [12] HTTP_Method Enumeration                ║
 ║  [13] SSL/TLS Information                    ║
 ║  [14] Directory Enumeration                  ║
 ║                                              ║
