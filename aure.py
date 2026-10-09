@@ -36,7 +36,7 @@ print("""
 ║                PASSIVE RECON                 ║
 ║                                              ║
 ║  [1]  WHOIS Information                      ║
-║  [2]  Search Engine Recon                    ║
+║  [2]  Certificate Transparency               ║
 ║  [3]  Google Dorking                         ║
 ║  [4]  Email Enumeration                      ║
 ║  [5]  IP Information                         ║
@@ -49,7 +49,7 @@ print("""
 ║  [9]  Service Enumeration                    ║
 ║  [10] HTTP Header Analysis                   ║
 ║  [11] Web Technology Detection               ║
-║  [12] Robots & Sitemap Check                 ║
+║  [12] HTTP_Method                            ║
 ║  [13] SSL/TLS Information                    ║
 ║  [14] Directory Enumeration                  ║
 ║                                              ║
