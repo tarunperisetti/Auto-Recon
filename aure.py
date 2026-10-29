@@ -15,40 +15,39 @@ def banner():
 
 banner()
 
-print("""
-╔══════════════════════════════════════════════╗
-║                 AUTO RECON                   ║
-╠══════════════════════════════════════════════╣
-║                                              ║
-║                PASSIVE RECON                 ║
-║                                              ║
-║  [1]  WHOIS Information                      ║
-║  [2]  Shodan Recon                           ║
-║  [3]  Google Dorking                         ║
-║  [4]  Email Enumeration                      ║
-║  [5]  IP Information                         ║
-║  [6]  ASN Lookup                             ║
-║                                              ║
-║                ACTIVE RECON                  ║
-║                                              ║
-║  [7]  DNS Enumeration                        ║
-║  [8]  Subdomain Enumeration                  ║
-║  [9]  Port Scanning                          ║
-║  [10] Service Enumeration                    ║
-║  [11] HTTP Header Analysis                   ║
-║  [12] Web Technology Detection               ║
-║  [13] HTTP_Method Enumeration                ║
-║  [14] Directory Enumeration                  ║
-║                                              ║
-║                 OPERATIONS                   ║
-║                                              ║
-║  [0]  Exit                                   ║
-║                                              ║
-╚══════════════════════════════════════════════╝
-""")
-
-
 while True:
+    print("""
+            ╔══════════════════════════════════════════════╗
+            ║                 AUTO RECON                   ║
+            ╠══════════════════════════════════════════════╣
+            ║                                              ║
+            ║                PASSIVE RECON                 ║
+            ║                                              ║
+            ║  [1]  WHOIS Information                      ║
+            ║  [2]  Shodan Recon                           ║
+            ║  [3]  Google Dorking                         ║
+            ║  [4]  Email Enumeration                      ║
+            ║  [5]  IP Information                         ║
+            ║  [6]  ASN Lookup                             ║
+            ║                                              ║
+            ║                ACTIVE RECON                  ║
+            ║                                              ║
+            ║  [7]  DNS Enumeration                        ║
+            ║  [8]  Subdomain Enumeration                  ║
+            ║  [9]  Port Scanning                          ║
+            ║  [10] Service Enumeration                    ║
+            ║  [11] HTTP Header Analysis                   ║
+            ║  [12] Web Technology Detection               ║
+            ║  [13] HTTP_Method Enumeration                ║
+            ║  [14] Directory Enumeration                  ║
+            ║                                              ║
+            ║                 OPERATIONS                   ║
+            ║                                              ║
+            ║  [0]  Exit                                   ║
+            ║                                              ║
+            ╚══════════════════════════════════════════════╝
+        """)
+    
     choice = input("[?] Select recon : ").strip()
 
     if choice == "0":
