@@ -7,6 +7,11 @@ if [ -z "$target" ];then
     exit 1
 fi
 
+if ! command -v curl >/dev/null 2>&1; then
+    echo "[!] Error: curl is not installed."
+    exit 1
+fi
+
 # Add HTTPS if no scheme is provided
 if [[ "$target" != http://* && "$target" != https://* ]]; then
     target="https://$target"
@@ -32,4 +37,4 @@ if [ "$status" -ne 0 ]; then
 fi
 
 echo
-echo "[+] HTTP method check completed."
+echo "[✔] HTTP method check completed."

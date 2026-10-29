@@ -48,5 +48,5 @@ else
 fi
 
 echo
-echo "[+] Shodan recon completed."
+echo "[✔] Shodan recon completed..."
 echo "[*] Results reflect Shodan's available data, not a live scan."

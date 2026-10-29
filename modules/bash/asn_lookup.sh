@@ -49,4 +49,4 @@ else
     exit 1
 fi
 
-echo "[+] ASN lookup completed."
+echo "[✔] ASN lookup completed."

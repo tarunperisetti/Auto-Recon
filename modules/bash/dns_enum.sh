@@ -6,6 +6,11 @@ if [ -z "$target" ]; then
     exit 1
 fi
 
+if ! command -v dig >/dev/null 2>&1; then
+    echo "[!] Error: dig is not installed."
+    exit 1
+fi
+
 if [[ "$target" =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
     echo "[✱] Target : $target"
     echo
@@ -23,3 +28,5 @@ else
     echo "----------------TXT RECORD-----------------"
     dig "$target" TXT +short
 fi
+
+echo "[✔] DNS Enumeration completed..."

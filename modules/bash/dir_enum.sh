@@ -7,9 +7,6 @@ if [ -z "$target" ]; then
     exit 1
 fi
 
-echo "[✱] Target: $target"
-echo
-
 if ! command -v gobuster >/dev/null 2>&1; then
     echo "[!] Gobuster is not installed."
     echo "[!] Install it with:"
@@ -17,4 +14,9 @@ if ! command -v gobuster >/dev/null 2>&1; then
     exit 1
 fi
 
+echo "[✱] Target: $target"
+echo
+
 gobuster dir -u "$target" -w /usr/share/wordlists/dirb/common.txt
+
+echo "[✔] Directory Enumeration completed..."

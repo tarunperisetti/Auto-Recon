@@ -1,4 +1,5 @@
 from core.runner import run_bash
+from core.report import create_report
 from modules.python.geoip import run_geoip
 from colorama import Fore,init
 
@@ -8,11 +9,9 @@ def sidebanner(n):
     print(Fore.RED+n)
     print(Fore.CYAN+"="*82)
 
-#------------------------------active-recon-------------------------------------------------------
 def auto_recon(choice,target):
 
     match choice:
-
         case "1":
             sidebanner("[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>WHOIS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<]")
             run_bash("modules/bash/whois.sh",target) 
@@ -55,6 +54,9 @@ def auto_recon(choice,target):
         case "14":
             sidebanner("[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>DIRECTORY-ENUMERATION<<<<<<<<<<<<<<<<<<<<<<<<<<<<<]")
             run_bash("modules/bash/dir_enum.sh",target) 
+        case "15":
+            sidebanner("[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>GENERATE-REPORT<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<]")
+            create_report(target)
         case "0":
             print("[✱] Exiting Auto-Recon")
             exit()

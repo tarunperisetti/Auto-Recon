@@ -7,9 +7,6 @@ if [ -z "$target" ]; then
     exit 1
 fi
 
-echo "[✱] Target: $target"
-echo
-
 if ! command -v theHarvester >/dev/null 2>&1; then
     echo "[!] theHarvester is not installed."
     echo "[!] Install it with:"
@@ -17,7 +14,12 @@ if ! command -v theHarvester >/dev/null 2>&1; then
     exit 1
 fi
 
+echo "[✱] Target: $target"
+echo
+
 echo "[✱] Searching for publicly available email addresses..."
 echo
 
 theHarvester -d "$target" -b bing,duckduckgo
+
+echo "[✔] Email Enumeration completed..."

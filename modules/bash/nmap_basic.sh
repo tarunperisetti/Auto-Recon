@@ -9,3 +9,5 @@ fi
 echo "[✱] Target : $target"
 echo
 nmap -p- -T4 "$target"
+
+echo "[✔] Port Scanning completed..."

@@ -9,3 +9,5 @@ fi
 echo "[✱] Target : $target"
 echo
 nmap -sV -T4 "$target"
+
+echo "[✔] Nmap Service Enumeration completed..."
