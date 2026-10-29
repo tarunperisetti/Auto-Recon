@@ -1,28 +1,66 @@
-# 🔍 Auto-Recon
+## 🔍 Auto-Recon
 
-Auto-Recon is a simple automated reconnaissance tool designed to help security researchers and penetration testers collect basic information about a target.
+A simple Python-based reconnaissance tool that organizes passive and active reconnaissance tasks through a menu-driven interface. 
+It uses Python to validate the target and route the selected option to the reconnaissance modules.
 
-The project automates common reconnaissance tasks and organizes the results so they can be reviewed easily.
+> **Use responsibly:** Run this tool only against systems you own or
+> have explicit permission to assess. Active checks such as port
+> scanning, service enumeration, and directory enumeration send traffic
+> to the target.
 
-> ⚠️ **Disclaimer:** Use this tool only on systems you own or have explicit permission to test.
+## Features
 
----
+### Passive Reconnaissance
 
-## 🚀 Features
+-   **WHOIS Information** --- retrieve publicly available domain registration information.
+-   **Shodan Recon** --- look up information available through the Shodan InternetDB service.
+-   **Google Dorking** --- perform search-engine reconnaissance using search operators.
+-   **Email Enumeration** --- search for publicly available email-related information.
+-   **IP Information** --- retrieve IP/geolocation-related information through the project's Python module.
+-   **ASN Lookup** --- look up Autonomous System Number information.
 
-Auto-Recon can be used for tasks such as:
+### Active Reconnaissance
 
-- 🔎 Domain reconnaissance
-- 🌐 DNS enumeration
-- 📡 Port scanning
-- 🛠️ Service detection
-- 🌍 Web server information gathering
-- 📋 HTTP header analysis
-- 🔗 Subdomain enumeration
-- 📊 Collecting reconnaissance results
-- 📁 Organizing scan outputs
+-   **DNS Enumeration** --- query DNS-related information.
+-   **Subdomain Enumeration** --- look for subdomains.
+-   **Port Scanning** --- check for reachable ports.
+-   **Service Enumeration** --- identify services associated with discovered ports.
+-   **HTTP Header Analysis** --- inspect HTTP response headers.
+-   **Web Technology Detection** --- identify technologies used by a website.
+-   **HTTP Method Enumeration** --- check HTTP methods advertised or accepted by the target.
+-   **Directory Enumeration** --- check for discoverable web paths and directories.
 
-More features may be added as the project develops.
+## 📂 Project Structure
+
+``` text
+auto_recon/
+├── core/
+│   ├── results/             # Results-related directory
+│   ├── runner.py            # Helper for running commands/scripts
+│   └── valid.py             # Target validation/classification
+├── modules/
+│   ├── bash/
+│   │   ├── asn_lookup.sh
+│   │   ├── dir_enum.sh
+│   │   ├── dns_enum.sh
+│   │   ├── email_enum.sh
+│   │   ├── google_dorking.sh
+│   │   ├── http_headers.sh
+│   │   ├── http_method.sh
+│   │   ├── nmap_basic.sh
+│   │   ├── nmap_service.sh
+│   │   ├── shodan_recon.sh
+│   │   ├── subdomain_enum.sh
+│   │   ├── whatweb.sh
+│   │   └── whois.sh
+│   └── python/
+│       └── geoip.py
+├── recon/
+│   └── auto_recon.py        # Reconnaissance menu/dispatcher
+├── aure.py                  # Main entry point
+├── README.md
+└── requirements.txt        
+```
 
 ---
 
@@ -76,105 +114,34 @@ chmod +x modules/bash/*.sh
 ```
 
 ---
+## Example Workflow
 
-## ▶️ Usage
-
-Run the main program:
-
-```bash
-python3 aure.py
-```
-
-Follow the instructions shown by the program and provide the target domain or IP address.
-
-### Example
-
-```text
-Target: example.com
-```
-
-Auto-Recon will then perform the configured reconnaissance tasks and collect the results.
-
----
-
-## 📂 Project Structure
-
-```text
-Auto-Recon/
-│
-├── aure.py
-├── requirements.txt
-│
-├── core/
-│   ├── valid.py
-│   ├── runner.py
-│   └── report.py
-│
-├── modules/
-│   └── bash/
-│       ├── dns_enum.sh
-│       ├── http_headers.sh
-│       ├── google_dorking.sh
-│       ├── nmap_os.sh
-│       ├── nmap_service.sh 
-│       ├── ping.sh
-│       ├── subdomains_enum.sh
-│       ├── traceroute.sh
-│       ├── whatweb.sh
-│       └── whois.sh
-│
-└── results/
-    └── ...
-```
-
----
+1.  Start the program with `python3 aure.py`.
+2.  Select a reconnaissance option. 
+3.  Enter the authorized domain or IP address.
+4.  Review the output and any results saved by that module.
+5.  Select **0 --- Exit** to close the program.
 
 ## 📊 Results
 
-The reconnaissance results can be saved and organized for later analysis.
+The project includes `core/results/` .
+Check the implementation of `core/runner.py` and `recon/auto_recon.py` to confirm: - where module outputs are saved; - whether errors and standard output are both captured.
 
-Typical information may include:
+## Limitations
 
-```text
-Ports
-Services
-Web Server
-HTTP Headers
-Subdomains
-DNS Information
-```
-
-The collected information can also be used to generate a report.
-
----
-
-## 🛠️ Technologies Used
-
-- **Python** — Main application
-- **Bash** — Reconnaissance scripts
-- **Nmap** — Port and service scanning
-- **Curl** — HTTP requests and web information gathering
-- **Linux** — Development and testing environment
-
----
+-   Results depend on the tools, data sources, network access, and target responses available to each module.
+-   Public lookup services may return incomplete or outdated information.
+-   A missing result does not prove that a host, service, email address, or subdomain does not exist.
+-   Active scans may trigger security monitoring or affect target systems; use appropriate authorization and conservativ settings.
 
 ## ⚠️ Disclaimer
 
-This project is intended for **educational purposes and authorized security testing only**.
-
-Do not use Auto-Recon against systems, networks, or domains without proper authorization.
-
-The developer is not responsible for misuse of this tool.
-
----
+This project is intended for learning, authorized security testing, and reconnaissance of systems for which you have permission. The user is responsible for complying with applicable laws, policies, and service terms.
 
 ## 👨‍💻 Author
 
-**Tarun Perisetti**
-
-GitHub:  https://github.com/tarunperisetti
-
----
+Tarun Perisetti
+GitHub: https://github.com/tarunperisetti
 
 ## ⭐ Support
 

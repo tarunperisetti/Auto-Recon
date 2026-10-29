@@ -1,5 +1,4 @@
 from core.runner import run_bash
-from core.report import create_report
 from modules.python.geoip import run_geoip
 from colorama import Fore,init
 
@@ -54,12 +53,6 @@ def auto_recon(choice,target):
         case "14":
             sidebanner("[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>DIRECTORY-ENUMERATION<<<<<<<<<<<<<<<<<<<<<<<<<<<<<]")
             run_bash("modules/bash/dir_enum.sh",target) 
-        case "15":
-            sidebanner("[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>GENERATE-REPORT<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<]")
-            create_report(target)
-        case "0":
-            print("[✱] Exiting Auto-Recon")
-            exit()
 
         case _:
             print("[✘] Invalid Option")
