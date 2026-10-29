@@ -36,21 +36,21 @@ print("""
 ║                PASSIVE RECON                 ║
 ║                                              ║
 ║  [1]  WHOIS Information                      ║
-║  [2]  Certificate Transparency               ║
+║  [2]  Shodan Recon                           ║
 ║  [3]  Google Dorking                         ║
 ║  [4]  Email Enumeration                      ║
 ║  [5]  IP Information                         ║
+║  [6]  ASN Lookup                             ║
 ║                                              ║
 ║                ACTIVE RECON                  ║
 ║                                              ║
-║  [6]  DNS Enumeration                        ║
-║  [7]  Subdomain Enumeration                  ║
-║  [8]  Port Scanning                          ║
-║  [9]  Service Enumeration                    ║
-║  [10] HTTP Header Analysis                   ║
-║  [11] Web Technology Detection               ║
-║  [12] HTTP_Method Enumeration                ║
-║  [13] SSL/TLS Information                    ║
+║  [7]  DNS Enumeration                        ║
+║  [8]  Subdomain Enumeration                  ║
+║  [9]  Port Scanning                          ║
+║  [10] Service Enumeration                    ║
+║  [11] HTTP Header Analysis                   ║
+║  [12] Web Technology Detection               ║
+║  [13] HTTP_Method Enumeration                ║
 ║  [14] Directory Enumeration                  ║
 ║                                              ║
 ║                 OPERATIONS                   ║

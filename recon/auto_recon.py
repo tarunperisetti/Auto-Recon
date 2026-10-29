@@ -17,8 +17,8 @@ def auto_recon(choice,target):
             sidebanner("[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>WHOIS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<]")
             run_bash("modules/bash/whois.sh",target) 
         case "2":
-            sidebanner("[>>>>>>>>>>>>>>>>>>>>>>>>>>>>CERTIFICATE-TRANSPARENCY<<<<<<<<<<<<<<<<<<<<<<<<<<<]")
-            run_bash("modules/bash/certificate_transparency.sh",target) 
+            sidebanner("[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SHODAN-SEARCH<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<]")
+            run_bash("modules/bash/shodan_recon.sh",target) 
         case "3":  
             sidebanner("[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>GOOGLE-DORKING<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<]")
             run_bash("modules/bash/google_dorking.sh",target)
@@ -28,30 +28,30 @@ def auto_recon(choice,target):
         case "5":
             sidebanner("[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>IP INFO<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<]") 
             run_geoip(target)
-        case "6":
+        case "6": 
+            sidebanner("[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>ASN-LOOKUP<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<]")
+            run_bash("modules/bash/asn_lookup.sh",target)
+        case "7":
             sidebanner("[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>DNS-ENUMERATION<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<]")
             run_bash("modules/bash/dns_enum.sh",target)
-        case "7":
+        case "8":
             sidebanner("[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SUBDOMAINS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<]")
             run_bash("modules/bash/subdomain_enum.sh",target)
-        case "8":    
+        case "9":    
             sidebanner("[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>NMAP BASIC SCAN<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<]")
             run_bash("modules/bash/nmap_os.sh",target)
-        case "9":
+        case "10":
             sidebanner("[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>NMAP SERVICE SCAN<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<]")
             run_bash("modules/bash/nmap_service.sh",target)
-        case "10":   
+        case "11":   
             sidebanner("[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>HHTP HEADERS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<]")
             run_bash("modules/bash/http_headers.sh",target)
-        case "11":    
+        case "12":    
             sidebanner("[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>WHATWEB<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<]")
             run_bash("modules/bash/whatweb.sh",target)
-        case "12": 
+        case "13": 
             sidebanner("[>>>>>>>>>>>>>>>>>>>>>>>>>>>>HTTP-METHOD-ENUMERATION<<<<<<<<<<<<<<<<<<<<<<<<<<<<]")
             run_bash("modules/bash/http_method.sh",target) 
-        case "13": 
-            sidebanner("[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SSL/TLS-INFORMATION<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<]")
-            run_bash("modules/bash/ssl_tls_info.sh",target)
         case "14":
             sidebanner("[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>DIRECTORY-ENUMERATION<<<<<<<<<<<<<<<<<<<<<<<<<<<<<]")
             run_bash("modules/bash/dir_enum.sh",target) 
