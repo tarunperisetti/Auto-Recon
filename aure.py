@@ -1,4 +1,5 @@
 from core.valid import classify_target
+from core.report import create_report
 from recon.auto_recon import auto_recon
 import socket
 import pyfiglet 
@@ -14,19 +15,6 @@ def banner():
 #-----------------main-----------------
 
 banner()
-
-target = input("\n[✱] Enter IP address or Domain name : ")
-target_type = classify_target(target)
-
-if target_type == "DOMAIN":
-    ip = socket.gethostbyname(target)
-    print(f"[+] Target IP : {ip}\n")
-elif target_type == "IP":
-    domain = socket.gethostbyaddr(target)
-    print(f"[+] Target Domain : {domain}\n")
-else:
-    print("[✘] Invalid Target")
-    exit()
 
 print("""
 ╔══════════════════════════════════════════════╗
@@ -62,4 +50,31 @@ print("""
 """)
 
 choice = input("[?] Select recon : ")
+
+target = input("\n[✱] Enter IP address or Domain name : ")
+target_type = classify_target(target)
+
+if target_type == "DOMAIN":
+    ip = socket.gethostbyname(target)
+    print(f"[+] Target IP : {ip}\n")
+elif target_type == "IP":
+    domain = socket.gethostbyaddr(target)
+    print(f"[+] Target Domain : {domain}\n")
+else:
+    print("[✘] Invalid Target")
+    exit()
+
 auto_recon(choice,target)
+
+if choice not in ("0", "15"):
+    print("\n[+] Selected reconnaissance completed!")
+
+    report_choice = input(
+        "\n[?] Do you want to generate a report now? (y/n): "
+    ).strip().lower()
+
+    if report_choice in ("y", "yes"):
+        create_report(target)
+    else:
+        print("\n[*] Report generation skipped.")
+        print("[+] Your saved results are available for later.")
